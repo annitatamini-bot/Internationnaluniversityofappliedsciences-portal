@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student portal for International University of Applied Sciences" />
+  <title>IU Applied Sciences | Student Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">IU</div>
+        <div><strong>IU</strong><span>Applied Sciences</span></div>
+      </div>
+      <div class="student-mini"><div class="avatar">TA</div><div><strong>Annita Tamini</strong><small>Master's Student</small></div></div>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-view="dashboard"><span>⌂</span> Dashboard</button>
+        <button class="nav-item" data-view="courses"><span>▣</span> My Courses</button>
+        <button class="nav-item" data-view="transcript"><span>▤</span> Transcript</button>
+        <button class="nav-item" data-view="thesis"><span>✎</span> Master Thesis</button>
+        <button class="nav-item" data-view="certificate"><span>✦</span> Certificate</button>
+      </nav>
+      <div class="sidebar-footer"><span class="status-dot"></span> Academic year 2025/26<br /><small>Student ID: IU-TRAH-2025</small></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><button class="menu-toggle" id="menuToggle">☰</button><div class="breadcrumb">Student portal <span>/</span> <b id="currentPage">Dashboard</b></div><div class="top-actions"><button class="icon-btn" title="Notifications">♧<i></i></button><div class="profile-chip"><div class="avatar small">TA</div><span>Annita Tamini</span><span>⌄</span></div></div></header>
+
+      <section id="dashboard" class="view active-view">
+        <div class="welcome"><div><p class="eyebrow">MONDAY, 21 SEPTEMBER 2026</p><h1>Good morning, Annita.</h1><p class="muted">Welcome back to your academic journey. Here is your progress at a glance.</p></div><div class="welcome-shape">✦</div></div>
+        <div class="stat-grid"><div class="stat-card"><span class="stat-icon purple">◒</span><div><small>Programme progress</small><strong>75%</strong><p>45 of 60 ECTS completed</p></div></div><div class="stat-card"><span class="stat-icon green">✓</span><div><small>Current average</small><strong>14.25<span>/20</span></strong><p>Very good standing</p></div></div><div class="stat-card"><span class="stat-icon amber">⌁</span><div><small>Thesis status</small><strong>In progress</strong><p>Supervisor assigned</p></div></div></div>
+        <div class="section-heading"><div><h2>Continue learning</h2><p class="muted">Your current semester courses</p></div><button class="text-btn" data-view="courses">View all courses →</button></div>
+        <div class="course-preview" id="coursePreview"></div>
+        <div class="section-heading lower"><div><h2>Academic timeline</h2><p class="muted">Key milestones in your programme</p></div></div>
+        <div class="timeline"><div class="timeline-item done"><span>✓</span><div><strong>Semester 3 completed</strong><small>30 ECTS · September 2026</small></div></div><div class="timeline-item current"><span>◉</span><div><strong>Semester 4 in progress</strong><small>Legal Tech & Corporate Practice Seminar</small></div></div><div class="timeline-item"><span>○</span><div><strong>Master thesis submission</strong><small>Pending validation</small></div></div><div class="timeline-item"><span>○</span><div><strong>Master certificate</strong><small>Available after all requirements are met</small></div></div></div>
+      </section>
+
+      <section id="courses" class="view"><div class="page-heading"><div><p class="eyebrow">LEARNING SPACE</p><h1>My Courses</h1><p class="muted">Explore your complete Master's curriculum.</p></div><div class="filter-pill">All semesters ▾</div></div><div class="semester-label"><span>Semester 3</span><b>30 ECTS</b></div><div class="courses-grid" id="semester3"></div><div class="semester-label"><span>Semester 4</span><b>30 ECTS</b></div><div class="courses-grid" id="semester4"></div></section>
+
+      <section id="transcript" class="view"><div class="page-heading"><div><p class="eyebrow">ACADEMIC RECORD</p><h1>Official Transcript</h1><p class="muted">Master's programme · International University of Applied Sciences</p></div><button class="outline-btn" onclick="window.print()">�� Download / Print</button></div><div class="transcript-paper"><div class="paper-head"><div class="iu-logo"><span>IU</span><div>INTERNATIONAL<br /><b>UNIVERSITY OF<br />APPLIED SCIENCES</b></div></div><div class="paper-meta"><small>STUDENT TRANSCRIPT</small><strong>21 September 2026</strong></div></div><div class="student-record"><div><small>STUDENT NAME</small><strong>TAMINI Annita Richmonde Habué</strong></div><div><small>STUDENT ID</small><strong>IU-TRAH-2025</strong></div><div><small>PROGRAMME</small><strong>Master of Laws (LL.M.)</strong></div><div><small>STATUS</small><strong>In progress</strong></div></div><div class="transcript-table"><div class="table-row table-head"><span>Course code & title</span><span>ECTS</span><span>Grade</span><span>Result</span></div><div id="transcriptRows"></div><div class="table-total"><span>Total completed credits</span><b>30 ECTS</b><strong>Average&nbsp; 14.25 / 20</strong></div></div><div class="paper-foot"><span>Official digital record · Verify with Student ID IU-TRAH-2025</span><span>Page 1 of 1</span></div></div></section>
+
+      <section id="thesis" class="view"><div class="page-heading"><div><p class="eyebrow">FINAL REQUIREMENT</p><h1>Master Thesis</h1><p class="muted">Manage your research project and submission milestones.</p></div><span class="status-badge amber-bg">● In progress</span></div><div class="thesis-hero"><div class="thesis-icon">✎</div><div><small>MASTER OF LAWS · THESIS PROJECT</small><h2>Digital Regulation and Cross-Border Compliance in Platform Economies</h2><p class="muted">Your thesis topic can be edited until the proposal has been formally approved.</p></div><button class="outline-btn">Edit topic</button></div><div class="thesis-grid"><div class="panel"><div class="panel-title"><h3>Progress</h3><strong>42%</strong></div><div class="progress"><span style="width:42%"></span></div><div class="milestones"><div class="milestone complete"><span>✓</span><div><b>Topic proposal</b><small>Approved · 12 Jun 2026</small></div></div><div class="milestone complete"><span>✓</span><div><b>Research plan</b><small>Approved · 28 Jul 2026</small></div></div><div class="milestone active"><span>3</span><div><b>Literature review</b><small>In progress · Due 15 Oct 2026</small></div></div><div class="milestone"><span>4</span><div><b>Final submission & defence</b><small>Not started</small></div></div></div></div><div class="panel supervisor"><h3>Supervisor</h3><div class="supervisor-person"><div class="avatar">DA</div><div><strong>Dr. David A. Mensah</strong><small>Professor of International Business Law</small></div></div><button class="outline-btn full">✉ Contact supervisor</button><div class="next-deadline"><small>NEXT DEADLINE</small><strong>15 October 2026</strong><span>Literature review submission</span></div></div></div></section>
+
+      <section id="certificate" class="view"><div class="page-heading"><div><p class="eyebrow">GRADUATION DOCUMENT</p><h1>Certificate of Achievement</h1><p class="muted">Your certificate will be issued once all programme requirements are fulfilled.</p></div><span class="status-badge purple-bg">◷ Pending requirements</span></div><div class="certificate-wrap"><div class="certificate"><div class="cert-border"><div class="cert-brand">IU <small>INTERNATIONAL UNIVERSITY<br />OF APPLIED SCIENCES</small></div><p class="cert-kicker">CERTIFICATE OF ACHIEVEMENT</p><p class="cert-intro">This is to certify that</p><h2>TAMINI Annita Richmonde Habué</h2><p class="cert-body">has successfully completed the academic requirements for the award of the</p><h3>Master of Laws (LL.M.)</h3><p class="cert-body">Subject to the successful submission, defence and validation of the Master Thesis.</p><div class="cert-footer"><span>Academic Registrar<br /><i>International University of Applied Sciences</i></span><span>Certificate status<br /><b>Pending thesis validation</b></span></div></div></div></div><div class="requirements panel"><h3>Issuance requirements</h3><div class="requirement done"><span>✓</span><div><b>60 ECTS credits</b><small>45 credits completed · 15 credits in progress</small></div></div><div class="requirement pending"><span>2</span><div><b>Master thesis validation</b><small>Certificate unlocks after approval of your final thesis</small></div></div><div class="requirement pending"><span>3</span><div><b>Final academic review</b><small>Pending completion of all programme obligations</small></div></div></div></section>
+    </main>
+  </div>
+  <div class="modal" id="courseModal"><div class="modal-card"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
